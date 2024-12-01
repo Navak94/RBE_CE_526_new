@@ -1,4 +1,3 @@
-# RBE_CE_526_new
 
 # Prerequisites
 Ubuntu 22.04 jammy
@@ -8,25 +7,31 @@ mediapipe
 opencv-python
 
 # run the following 
+```bash
   sudo apt update
   sudo apt install ros-humble-gazebo-ros-pkgs ros-humble-teleop-twist-keyboard
 
 # Set up workspace
+```bash
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws
 
 # copy hri_mobile_robot_description to the workspace you just created
+```bash
 cp -r /hri_mobile_robot_description ~/ros2_ws/src/
 
-# build the workspace 
+# build the workspace
+```bash 
 cd ~/ros2_ws
 colcon build
 
-# source the workspace 
+# source the workspace
+```bash 
 source ~/ros2_ws/install/setup.bash
 
 
-#to run
+# to run
+
 GESTURE_ros_sim for using gesture control
 TELEOP_ros_sim for teleop control
 
