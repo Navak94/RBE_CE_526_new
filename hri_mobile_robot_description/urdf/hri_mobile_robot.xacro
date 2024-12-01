@@ -1,0 +1,788 @@
+<?xml version="1.0" ?>
+<robot name="hri_mobile_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find hri_mobile_robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find hri_mobile_robot_description)/urdf/hri_mobile_robot.trans" />
+<xacro:include filename="$(find hri_mobile_robot_description)/urdf/hri_mobile_robot.gazebo" />
+
+<link name="base_footprint"/>
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0003883326815445874 -0.0007366244927973042 0.063418134599278" rpy="0 0 0"/>
+    <mass value="0.984726332710712"/>
+    <inertia ixx="0.005875" iyy="0.011092" izz="0.014851" ixy="-0.0" iyz="2.9e-05" ixz="9e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="body"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="blue_front_motor_1">
+  <inertial>
+    <origin xyz="-0.009895900813207625 0.05473514531430353 0.009733604018060664" rpy="0 0 0"/>
+    <mass value="0.9206372737553734"/>
+    <inertia ixx="0.001003" iyy="0.000155" izz="0.001004" ixy="-0.0" iyz="7e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.134897 0.113999 -0.018156" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.134897 0.113999 -0.018156" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="red_back_motor_1">
+  <inertial>
+    <origin xyz="0.009903095461503642 0.054735145314309314 -0.010065395981937036" rpy="0 0 0"/>
+    <mass value="0.9206372737553734"/>
+    <inertia ixx="0.001003" iyy="0.000155" izz="0.001004" ixy="-0.0" iyz="7e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.134902 0.113999 -0.037955" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.134902 0.113999 -0.037955" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="red_front_motor_1">
+  <inertial>
+    <origin xyz="-0.0098958975945527 -0.0547347415215833 -0.009734320795236576" rpy="0 0 0"/>
+    <mass value="0.9206372737553734"/>
+    <inertia ixx="0.001003" iyy="0.000155" izz="0.001004" ixy="0.0" iyz="7e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.134897 -0.114001 -0.037955" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.134897 -0.114001 -0.037955" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_front_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="blue_back_motor_1">
+  <inertial>
+    <origin xyz="-0.009895901319840347 -0.05473474152157765 0.010064679204762336" rpy="0 0 0"/>
+    <mass value="0.9206372737553734"/>
+    <inertia ixx="0.001003" iyy="0.000155" izz="0.001004" ixy="0.0" iyz="7e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.115103 -0.114001 -0.018156" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.115103 -0.114001 -0.018156" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_back_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="blue_front_wheel_1">
+  <inertial>
+    <origin xyz="1.9911016929247127e-06 -0.02660100375835152 2.7818640562643493e-07" rpy="0 0 0"/>
+    <mass value="0.4445107061937357"/>
+    <inertia ixx="0.000122" iyy="0.000156" izz="0.000122" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.124997 0.114999 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="blue_wheel"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.124997 0.114999 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="red_front_wheel_1">
+  <inertial>
+    <origin xyz="-1.649981296120151e-06 0.02660140755106756 5.036415402781547e-09" rpy="0 0 0"/>
+    <mass value="0.07814328338182797"/>
+    <inertia ixx="2.1e-05" iyy="2.8e-05" izz="2.1e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.124997 -0.115001 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="red_wheel"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.124997 -0.115001 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="blue_back_wheel_1">
+  <inertial>
+    <origin xyz="1.990595064227385e-06 0.026601407551076497 5.036419153253702e-09" rpy="0 0 0"/>
+    <mass value="0.4445107061937357"/>
+    <inertia ixx="0.000122" iyy="0.000156" izz="0.000122" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.125003 -0.115001 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="blue_wheel"/>
+  </visual>
+  <collision>
+    <origin xyz="0.125003 -0.115001 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/blue_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="red_back_wheel_1">
+  <inertial>
+    <origin xyz="-1.6569252428710879e-06 -0.026601003758340167 2.7818641091734153e-07" rpy="0 0 0"/>
+    <mass value="0.07814328338182797"/>
+    <inertia ixx="2.1e-05" iyy="2.8e-05" izz="2.1e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.125003 0.114999 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="red_wheel"/>
+  </visual>
+  <collision>
+    <origin xyz="0.125003 0.114999 -0.028055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/red_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.0006716267078951056 -0.00042040461363620834 0.033185459303398945" rpy="0 0 0"/>
+    <mass value="0.7361614818484488"/>
+    <inertia ixx="0.000498" iyy="0.000825" izz="0.000783" ixy="-4e-06" iyz="9e-06" ixz="4.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="3e-06 0.002258 -0.15" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="lidar"/>
+  </visual>
+  <collision>
+    <origin xyz="3e-06 0.002258 -0.127055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_1_1">
+  <inertial>
+    <origin xyz="-0.04233647055894773 0.18746950874764656 0.1194841973541598" rpy="0 0 0"/>
+    <mass value="1.3079863520059085"/>
+    <inertia ixx="0.001709" iyy="0.000643" izz="0.002276" ixy="-6e-06" iyz="-2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/battery_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="battery"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/battery_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_2_1">
+  <inertial>
+    <origin xyz="0.04066352944105144 0.1874695087476466 0.11948419735415973" rpy="0 0 0"/>
+    <mass value="1.3079863520059085"/>
+    <inertia ixx="0.001709" iyy="0.000643" izz="0.002276" ixy="-6e-06" iyz="-2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/battery_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="battery"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/battery_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_mount_1">
+  <inertial>
+    <origin xyz="0.003502552046740673 0.008652678183162793 -0.01370178300698445" rpy="0 0 0"/>
+    <mass value="0.03710123909550107"/>
+    <inertia ixx="5.5e-05" iyy="5e-06" izz="5e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.099997 0.017258 -0.096913" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/camera_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="mount"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.099997 0.017258 -0.096913" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/camera_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.01269599537782952 1.1048379338438746e-06 -9.151061534720673e-06" rpy="0 0 0"/>
+    <mass value="0.6655300244375711"/>
+    <inertia ixx="0.000817" iyy="7.9e-05" izz="0.000807" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.106997 0.008605 -0.082984" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="camera"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.106997 0.008605 -0.082984" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_optical_link"></link>
+
+<link name="on_off_switch_1">
+  <inertial>
+    <origin xyz="-0.006693936649961374 -1.9444332850443695e-05 -0.015491386487046205" rpy="0 0 0"/>
+    <mass value="0.034574463579537765"/>
+    <inertia ixx="3e-06" iyy="5e-06" izz="3e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.153689 -1e-06 -0.053369" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/on_off_switch_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="switch"/>
+  </visual>
+  <collision>
+    <origin xyz="0.153689 -1e-06 -0.053369" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/on_off_switch_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="raspberry_pi_4_1">
+  <inertial>
+    <origin xyz="-0.037171576544246424 0.21753126028413167 0.11594619058659278" rpy="0 0 0"/>
+    <mass value="0.1470232813037125"/>
+    <inertia ixx="9.9e-05" iyy="4.3e-05" izz="0.000135" ixy="-1e-06" iyz="1e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/raspberry_pi_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="rpi"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/raspberry_pi_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="buck_converter_1">
+  <inertial>
+    <origin xyz="-0.03793648240339171 0.15180626400845693 0.11574053284904284" rpy="0 0 0"/>
+    <mass value="0.05335329315722803"/>
+    <inertia ixx="4e-06" iyy="1.2e-05" izz="1.4e-05" ixy="-1e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/buck_converter_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="buck_converter"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/buck_converter_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_driver_1">
+  <inertial>
+    <origin xyz="0.03772524701203314 0.16587411630795207 0.11823934000061864" rpy="0 0 0"/>
+    <mass value="0.08511769522856089"/>
+    <inertia ixx="1.7e-05" iyy="1.4e-05" izz="2.3e-05" ixy="-0.0" iyz="-3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="motor_driver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="imu_1">
+  <inertial>
+    <origin xyz="5.922695241679687e-05 -0.00011818632634422177 0.0009080224620955646" rpy="0 0 0"/>
+    <mass value="0.0035126296390040395"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="3e-06 0.007999 -0.057055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="imu"/>
+  </visual>
+  <collision>
+    <origin xyz="3e-06 0.007999 -0.057055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arduino_nano_1">
+  <inertial>
+    <origin xyz="0.00428544923548441 0.2135462753663247 0.11932280177175247" rpy="0 0 0"/>
+    <mass value="0.018672901819897888"/>
+    <inertia ixx="3e-06" iyy="1e-06" izz="4e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/arduino_nano_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="nano"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/arduino_nano_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bec_1">
+  <inertial>
+    <origin xyz="0.018856008376388646 0.2817329824452446 0.1118177775292872" rpy="0 0 0"/>
+    <mass value="0.0002950252295507393"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bec_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="bec"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bec_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bms_1_1">
+  <inertial>
+    <origin xyz="0.03628206333455674 0.2670770605616489 0.11144640916912446" rpy="0 0 0"/>
+    <mass value="0.005835041005983502"/>
+    <inertia ixx="1e-06" iyy="0.0" izz="1e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="bms"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bms_2_1">
+  <inertial>
+    <origin xyz="0.055282063334556666 0.2680770605616489 0.11144640916912393" rpy="0 0 0"/>
+    <mass value="0.005835041005983502"/>
+    <inertia ixx="1e-06" iyy="0.0" izz="1e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="bms"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bms_3_1">
+  <inertial>
+    <origin xyz="0.03628206333455667 0.21207706056164924 0.11144640916912446" rpy="0 0 0"/>
+    <mass value="0.005835041005983502"/>
+    <inertia ixx="1e-06" iyy="0.0" izz="1e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="bms"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bms_4_1">
+  <inertial>
+    <origin xyz="0.055282063334556625 0.21207706056164927 0.11144640916912402" rpy="0 0 0"/>
+    <mass value="0.005835041005983502"/>
+    <inertia ixx="1e-06" iyy="0.0" izz="1e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="bms"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hri_mobile_robot_description)/meshes/bms_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="base_footprint_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+</joint>
+
+
+<joint name="blue_front_motor_joint" type="fixed">
+  <origin xyz="0.134897 -0.113999 0.018156" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="blue_front_motor_1"/>
+</joint>
+
+<joint name="red_back_motor_joint" type="fixed">
+  <origin xyz="-0.134902 -0.113999 0.037955" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="red_back_motor_1"/>
+</joint>
+
+<joint name="red_front_motor_joint" type="fixed">
+  <origin xyz="0.134897 0.114001 0.037955" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="red_front_motor_1"/>
+</joint>
+
+<joint name="blue_back_motor_joint" type="fixed">
+  <origin xyz="-0.115103 0.114001 0.018156" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="blue_back_motor_1"/>
+</joint>
+
+<joint name="blue_front_wheel_joint" type="continuous">
+  <origin xyz="-0.0099 -0.001 0.009899" rpy="0 0 0"/>
+  <parent link="blue_front_motor_1"/>
+  <child link="blue_front_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="red_front_wheel_joint" type="continuous">
+  <origin xyz="-0.0099 0.001 -0.0099" rpy="0 0 0"/>
+  <parent link="red_front_motor_1"/>
+  <child link="red_front_wheel_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="blue_back_wheel_joint" type="continuous">
+  <origin xyz="-0.0099 0.001 0.009899" rpy="0 0 0"/>
+  <parent link="blue_back_motor_1"/>
+  <child link="blue_back_wheel_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="red_back_wheel_joint" type="continuous">
+  <origin xyz="0.009899 -0.001 -0.0099" rpy="0 0 0"/>
+  <parent link="red_back_motor_1"/>
+  <child link="red_back_wheel_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="-3e-06 -0.002258 0.15" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="battery_1_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="battery_1_1"/>
+</joint>
+
+<joint name="battery_2_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="battery_2_1"/>
+</joint>
+
+<joint name="camera_mount_joint" type="fixed">
+  <origin xyz="0.099997 -0.017258 0.096913" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_mount_1"/>
+</joint>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="0.007 0.008653 -0.013929" rpy="0 0 0"/>
+  <parent link="camera_mount_1"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="camera_optical_joint" type="fixed">
+  <origin xyz="0.028 0 0" rpy="0 0 0"/>
+  <parent link="camera_1"/>
+  <child link="camera_optical_link"/>
+</joint>
+
+<joint name="switch_joint" type="fixed">
+  <origin xyz="-0.153689 1e-06 0.053369" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="on_off_switch_1"/>
+</joint>
+
+<joint name="raspberry_pi_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="raspberry_pi_4_1"/>
+</joint>
+
+<joint name="buck_converter_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="buck_converter_1"/>
+</joint>
+
+<joint name="motor_driver_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_driver_1"/>
+</joint>
+
+<joint name="imu_joint" type="fixed">
+  <origin xyz="-3e-06 -0.007999 0.057055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="imu_1"/>
+</joint>
+
+<joint name="arduino_nano_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arduino_nano_1"/>
+</joint>
+
+<joint name="bec_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bec_1"/>
+</joint>
+
+<joint name="bms_1_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bms_1_1"/>
+</joint>
+
+<joint name="bms_2_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bms_2_1"/>
+</joint>
+
+<joint name="bms_3_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bms_3_1"/>
+</joint>
+
+<joint name="bms_4_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bms_4_1"/>
+</joint>
+
+     
+<!-- ************************** Plugins ********************************* -->
+
+<!-- Mecanum wheel control -->
+<gazebo>
+  <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+    <command_topic>cmd_vel</command_topic>
+    <odometry_topic>odom/unfiltered</odometry_topic>
+    <odometry_frame>odom</odometry_frame>
+    <odometry_rate>20.0</odometry_rate>
+    <robot_base_frame>base_footprint</robot_base_frame>
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>false</publish_odom_tf>
+  </plugin>
+</gazebo>
+
+<!-- Lidar -->
+
+<gazebo reference="lidar_1">
+    <sensor name="sensor_ray" type="ray">
+        <pose>0 0 0 0 0 0 </pose>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>360</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-3.14</min_angle>
+                    <max_angle>3.14</max_angle>
+                </horizontal>
+            </scan>
+            <range>
+                <min>0.15</min>
+                <max>25.0</max>
+            </range>
+        </ray>
+        <always_on>false</always_on>
+        <visualize>false</visualize>
+        <update_rate>100.0</update_rate>
+        <plugin name="laser" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace></namespace>
+                <remapping>~/out:=laser_scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>lidar_1</frame_name>
+        </plugin>
+    </sensor>
+</gazebo>
+
+ <gazebo reference="camera_optical_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_optical_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

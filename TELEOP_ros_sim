@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Source ROS 2 and the workspace
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+
+# Launch Gazebo with your robot
+
+#ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/robot/cmd_vel
+ros2 launch hri_mobile_robot_description joystick.launch.py &
+ros2 launch hri_mobile_robot_description gazebo.launch.py &
+

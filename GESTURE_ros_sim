@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Source ROS 2 and the workspace
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+
+# Launch Gazebo with your robot
+ros2 launch hri_mobile_robot_description gazebo.launch.py &
+cd ~/Desktop/git/RBE-CS-526/MediaPipe_TEST_Clementine/
+python3 Main.py & 
+

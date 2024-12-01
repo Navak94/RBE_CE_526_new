@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="hri_mobile_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="blue_front_wheel_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="blue_front_wheel_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="blue_front_wheel_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="red_front_wheel_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="red_front_wheel_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="red_front_wheel_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="blue_back_wheel_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="blue_back_wheel_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="blue_back_wheel_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="red_back_wheel_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="red_back_wheel_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="red_back_wheel_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
