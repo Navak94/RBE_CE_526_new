@@ -1,10 +1,10 @@
 
 # Prerequisites
-Ubuntu 22.04 jammy
-ROS 2 Humble
-Gazebo 11
-mediapipe
-opencv-python
+- Ubuntu 22.04 jammy
+- ROS 2 Humble
+- Gazebo 11
+- mediapipe
+- opencv-python
 
 # run the following 
 `
