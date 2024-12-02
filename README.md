@@ -5,7 +5,8 @@
 - Gazebo 11
 - mediapipe
 - opencv-python
-
+- java processing (optional)
+  
 # run the following 
 `
   sudo apt update
