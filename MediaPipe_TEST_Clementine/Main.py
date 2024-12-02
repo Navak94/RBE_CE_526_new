@@ -9,7 +9,6 @@ hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.5, min_tracki
 
 cap = cv2.VideoCapture(0)
 
-# Main loop
 while True:
     # frame is each frame
     success, frame = cap.read()
